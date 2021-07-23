@@ -20,7 +20,7 @@ locality of convolution operations, U-Net generally demonstrates limitations in 
 
 ## Dataset
 - UFBA_UESC_DENTAL_IMAGES[2] dataset was used for training.
-- Dataset can be accessed by demand[3].
+- Dataset can be accessed by request[3].
 
 ## Training
 - Training process can be started with following command.
