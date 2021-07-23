@@ -65,13 +65,3 @@ class SegInference:
             self.save_preds(preds)
 
         return preds
-
-
-if __name__ == '__main__':
-    inf = SegInference('transunet.pt', 'cuda:0')
-
-    import os
-
-    paths = os.listdir('test/img')
-    paths = [f'img/{p}' for p in paths]
-    inf.infer(paths)
