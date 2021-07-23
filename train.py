@@ -14,8 +14,9 @@ from train_transunet import TransUNetSeg
 
 
 class TrainTestPipe:
-    def __init__(self, train_path, test_path, device):
+    def __init__(self, train_path, test_path, model_path, device):
         self.device = device
+        self.model_path = model_path
 
         self.train_loader = self.__load_dataset(train_path, train=True)
         self.test_loader = self.__load_dataset(test_path, train=True)
@@ -55,7 +56,7 @@ class TrainTestPipe:
         return total_loss
 
     def train(self):
-        callback = EpochCallback(cfg.model_name, cfg.epoch,
+        callback = EpochCallback(self.model_path, cfg.epoch,
                                  self.transunet.model, self.transunet.optimizer, 'test_loss', cfg.patience)
 
         for epoch in range(cfg.epoch):

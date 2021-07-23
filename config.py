@@ -7,7 +7,7 @@ cfg.learning_rate = 1e-2
 cfg.momentum = 0.9
 cfg.weight_decay = 1e-4
 cfg.patience = 25
-cfg.model_name = 'transunet.pt'
+cfg.inference_threshold = 0.75
 
 cfg.transunet = EasyDict()
 cfg.transunet.img_dim = 512

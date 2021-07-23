@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /transunet_val0665.pt
+/results/
