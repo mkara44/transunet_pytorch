@@ -29,7 +29,7 @@ locality of convolution operations, U-Net generally demonstrates limitations in 
 - After model is trained, inference can be run with following command.
     - `python main.py --mode inference --model_path ./path/to/model --image_path ./path/to/image`
     
-## Other Useful Implementations
+## Other Implementations
 - [Self Attention CV / The AI Summer](https://github.com/The-AI-Summer/self-attention-cv)
 - [SOTA Vision / 04RR](https://github.com/04RR/SOTA-Vision)
 
