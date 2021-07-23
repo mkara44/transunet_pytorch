@@ -27,8 +27,11 @@ locality of convolution operations, U-Net generally demonstrates limitations in 
 
 ## Inference
 - After model is trained, inference can be run with following command.
-    - `python main.py --mode inference --model_path ./path/to/model --image_path ./path/to/image
-`
+    - `python main.py --mode inference --model_path ./path/to/model --image_path ./path/to/image`
+    
+## Other Useful Implementations
+- [Self Attention CV / The AI Summer](https://github.com/The-AI-Summer/self-attention-cv)
+- [SOTA Vision / 04RR](https://github.com/04RR/SOTA-Vision)
 
 ## References
 - [1] [TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation](https://arxiv.org/abs/2102.04306)
