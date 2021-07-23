@@ -11,6 +11,7 @@ locality of convolution operations, U-Net generally demonstrates limitations in 
 
 ## Model Architecture
 ![Model Architecture](./assets/arch.png "Model Architecure")
+
 *TransUNet Architecture Figure from Official Paper*
 
 ## Dependencies
