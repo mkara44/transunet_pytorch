@@ -1,7 +1,7 @@
 # Panoramic X-Ray Image Semantic Segmentation with TransUnet
 The unofficial implementation of [TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation](https://arxiv.org/abs/2102.04306) on Pytorch
 
-![GZSL](./assets/outs.png "GZSL")
+![Output](./assets/outs.png "Output")
 *Output of my implementation. (A) Original X-Ray Image; (B) Merged Image of the Predicted Segmentation Map and Original X-Ray; (C) Ground Truth; (D) Predicted Segmentation Map*
 
 ## TransUNet
