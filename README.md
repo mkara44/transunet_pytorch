@@ -1,4 +1,4 @@
-# Panoramic X-Ray Image Semantic Segmentation with TransUnet
+# Panoramic Dental X-Ray Image Semantic Segmentation with TransUnet
 The unofficial implementation of [TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation](https://arxiv.org/abs/2102.04306) on Pytorch
 
 ![Output](./assets/outs.png "Output")
