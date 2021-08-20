@@ -19,7 +19,7 @@ class TrainTestPipe:
         self.model_path = model_path
 
         self.train_loader = self.__load_dataset(train_path, train=True)
-        self.test_loader = self.__load_dataset(test_path, train=True)
+        self.test_loader = self.__load_dataset(test_path)
 
         self.transunet = TransUNetSeg(self.device)
 
