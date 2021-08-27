@@ -37,41 +37,5 @@ class RandomAugmentation:
         selected_augmentations = random.sample(self.augmentations, k=augmentation_count)
         for augmentation in selected_augmentations:
             img, mask = augmentation(img, mask)
-        return {'img': img, 'mask': mask}
 
-
-class BGR2RGB:
-    def __call__(self, sample):
-        img, mask = sample['img'], sample['mask']
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        return {'img': img, 'mask': mask}
-
-
-class Rescale:
-    def __init__(self, output_size):
-        self.output_size = output_size
-
-    def __call__(self, sample):
-        img, mask = sample['img'], sample['mask']
-        img = cv2.resize(img, (self.output_size, self.output_size))
-        mask = cv2.resize(mask, (self.output_size, self.output_size), interpolation=cv2.INTER_NEAREST)
-        mask = np.expand_dims(mask, axis=-1)
-        return {'img': img, 'mask': mask}
-
-
-class Normalize:
-    def __call__(self, sample):
-        img, mask = sample['img'], sample['mask']
-        img = img / 255.
-        mask = mask / 255.
-        return {'img': img, 'mask': mask}
-
-
-class ToTensor:
-    def __call__(self, sample):
-        img, mask = sample['img'], sample['mask']
-        img = img.transpose((2, 0, 1))
-        img = torch.from_numpy(img.astype('float32'))
-        mask = mask.transpose((2, 0, 1))
-        mask = torch.from_numpy(mask.astype('float32'))
         return {'img': img, 'mask': mask}

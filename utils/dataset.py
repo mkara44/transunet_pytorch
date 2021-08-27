@@ -9,6 +9,8 @@ from config import cfg
 
 
 class DentalDataset(Dataset):
+    output_size = cfg.transunet.img_dim
+
     def __init__(self, path, transform):
         super().__init__()
 
@@ -33,14 +35,29 @@ class DentalDataset(Dataset):
         mask = self.mask_paths[idx]
 
         img = cv2.imread(img)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv2.resize(img, (self.output_size, self.output_size))
+
         mask = cv2.imread(mask, 0)
+        mask = cv2.resize(mask, (self.output_size, self.output_size), interpolation=cv2.INTER_NEAREST)
+        mask = np.expand_dims(mask, axis=-1)
 
         sample = {'img': img, 'mask': mask}
 
         if self.transform:
             sample = self.transform(sample)
 
-        return sample
+        img, mask = sample['img'], sample['mask']
+
+        img = img / 255.
+        img = img.transpose((2, 0, 1))
+        img = torch.from_numpy(img.astype('float32'))
+
+        mask = mask / 255.
+        mask = mask.transpose((2, 0, 1))
+        mask = torch.from_numpy(mask.astype('float32'))
+
+        return {'img': img, 'mask': mask}
 
     def __len__(self):
         return len(self.img_paths)

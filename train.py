@@ -29,11 +29,8 @@ class TrainTestPipe:
 
         if train:
             shuffle = True
-            transform = transforms.Compose([T.BGR2RGB(),
-                                            T.Rescale(cfg.transunet.img_dim),
-                                            T.RandomAugmentation(2),
-                                            T.Normalize(),
-                                            T.ToTensor()])
+            transform = transforms.Compose([T.RandomAugmentation(2)])
+
         set = DentalDataset(path, transform)
         loader = DataLoader(set, batch_size=cfg.batch_size, shuffle=shuffle)
 
