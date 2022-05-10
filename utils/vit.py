@@ -9,7 +9,7 @@ class MultiHeadAttention(nn.Module):
         super().__init__()
 
         self.head_num = head_num
-        self.dk = (embedding_dim // head_num) ** 1 / 2
+        self.dk = (embedding_dim // head_num) ** (1 / 2)
 
         self.qkv_layer = nn.Linear(embedding_dim, embedding_dim * 3, bias=False)
         self.out_attention = nn.Linear(embedding_dim, embedding_dim, bias=False)
